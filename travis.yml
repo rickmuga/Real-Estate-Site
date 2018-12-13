@@ -1,0 +1,12 @@
+language: python
+python:
+  - '3.6'
+sudo: required
+install:
+  # upgrade pip so we cache built wheels for tests.
+  - pip install -U pip
+  # Install python dependencies
+  - pip install -e . -r tests/requirements.txt
+script:
+  # run linters/checkers
+  - ./scripts/lint.sh
